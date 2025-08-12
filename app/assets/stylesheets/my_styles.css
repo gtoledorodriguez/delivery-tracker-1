@@ -1,0 +1,7 @@
+div.waiting_on {
+  background-color: lightgoldenrodyellow;
+}
+
+div.received {
+  background-color: lightgreen;
+}
