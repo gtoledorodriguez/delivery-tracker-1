@@ -60,11 +60,16 @@
       <li>
         <div><%= a_delivery.description %></div>
 
-        <div style="">
-          Supposed to arrive on
-          <%= a_delivery.supposed_to_arrive_on %>
-        </div>
-
+        <% if a_delivery.supposed_to_arrive_on < 3.days.ago.to_date %>
+          <div style="color: red">
+            Supposed to arrive on
+            <%= a_delivery.supposed_to_arrive_on %>
+          </div>
+        <% end %>
+          <div style="">
+            Supposed to arrive on
+            <%= a_delivery.supposed_to_arrive_on %>
+          </div>
         <div>
           <%= a_delivery.details %>
         </div>
@@ -94,9 +99,9 @@
 
         <div style="">
           <small>
-          <%= time_ago_in_words(a_delivery.supposed_to_arrive_on) %>
+            <%= time_ago_in_words(a_delivery.supposed_to_arrive_on) %>
 
-          <a href="/delete_delivery/<%= a_delivery.id %>">Delete</a>
+            <a href="/delete_delivery/<%= a_delivery.id %>">Delete</a>
           </small>
         </div>
       </li>
