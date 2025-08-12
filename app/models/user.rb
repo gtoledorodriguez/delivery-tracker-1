@@ -21,4 +21,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  #Direct Assocations
+  has_many(:packages, class_name: "Delivery", foreign_key: "user_id")
+
+  #Scoped Direct Assocations
+  has_many(:waiting_for_packages, -> {where arrived: false}, class_name: "Delivery", foreign_key: "user_id")
+  has_many(:recieved_packages, -> {where arrived: true}, class_name: "Delivery", foreign_key: "user_id")
 end

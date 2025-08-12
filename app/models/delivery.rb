@@ -12,4 +12,6 @@
 #  user_id               :integer
 #
 class Delivery < ApplicationRecord
+  #Direct Associations
+  belongs_to :user
 end
