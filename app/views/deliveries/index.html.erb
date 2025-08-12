@@ -56,29 +56,29 @@
 <div class="waiting_on">
   <h2>Waiting on</h2>
   <ul>
-  <% current_user.waiting_for_packages.each do |a_delivery| %>
-    <li>
-      <div><%= a_delivery.description %></div>
+    <% current_user.waiting_for_packages.each do |a_delivery| %>
+      <li>
+        <div><%= a_delivery.description %></div>
 
-      <div style="">
-        Supposed to arrive on
-        <%= a_delivery.supposed_to_arrive_on %>
-      </div>
+        <div style="">
+          Supposed to arrive on
+          <%= a_delivery.supposed_to_arrive_on %>
+        </div>
 
-      <div>
-        <%= a_delivery.details %>
-      </div>
+        <div>
+          <%= a_delivery.details %>
+        </div>
 
-      <div>
-        <form action="/modify_delivery/<%= a_delivery.id %>" method="post">
-          <input type="hidden" name="arrived" value="true">
+        <div>
+          <form action="/modify_delivery/<%= a_delivery.id %>" method="post">
+            <input type="hidden" name="arrived" value="true">
 
-          <button>Mark as received</button>
-        </form>
-      </div>
+            <button>Mark as received</button>
+          </form>
+        </div>
 
-      <br>
-    </li>
+        <br>
+      </li>
     <% end %>
   </ul>
 </div>
@@ -88,29 +88,29 @@
 <div class="received">
   <h2>Recieved</h2>
   <ul>
-  <% current_user.recieved_packages.each do |a_delivery| %>
-    <li>
-      <div><%= a_delivery.description %></div>
+    <% current_user.recieved_packages.each do |a_delivery| %>
+      <li>
+        <div><%= a_delivery.description %></div>
 
-      <div style="">
-        Supposed to arrive on
-        <%= a_delivery.supposed_to_arrive_on %>
-      </div>
+        <div style="">
+          Supposed to arrive on
+          <%= a_delivery.supposed_to_arrive_on %>
+        </div>
 
-      <div>
-        <%= a_delivery.details %>
-      </div>
+        <div>
+          <%= a_delivery.details %>
+        </div>
 
-      <div>
-        <form action="/modify_delivery/<%= a_delivery.id %>" method="post">
-          <input type="hidden" name="arrived" value="true">
+        <div>
+          <form action="/modify_delivery/<%= a_delivery.id %>" method="post">
+            <input type="hidden" name="arrived" value="true">
 
-          <button>Mark as received</button>
-        </form>
-      </div>
+            <button>Mark as received</button>
+          </form>
+        </div>
 
-      <br>
-    </li>
+        <br>
+      </li>
     <% end %>
   </ul>
 </div>
